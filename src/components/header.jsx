@@ -4,23 +4,24 @@ import { IoSearch } from "react-icons/io5";
 import { FiShoppingCart } from "react-icons/fi";
 import { BiSolidOffer } from "react-icons/bi";
 import { FaRegUser } from "react-icons/fa6";
-import { useFetchCity } from '../hooks/useFetchLocation';
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addLocation } from '../utils/locationSlice';
 const Header = () => {
-    // const locationKey=process.env.REACT_APP_LOCATION_KEY
-    const locationKey = 'fe527e79686c473e96bea132ddc2c419'
+    const locationKey = process.env.REACT_APP_LOCATION_KEY
     const [cityInput, setCityInput] = useState('')
     const [CityInputIndia, setIndiaCity] = useState([])
 
     const [cityData, setCityData] = useState([])
 
     useEffect(() => {
+        if (cityInput.length < 2) return
+
         const timeOut = setTimeout(() => {
             fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${cityInput}&apiKey=${locationKey}`).then((res) => res.json()).then((res) => setCityData(res.features)).catch((err) => console.log('error on city fetch'))
         }, 0)
         return () => clearTimeout(timeOut)
+
 
     }, [cityInput])
 
@@ -32,9 +33,9 @@ const Header = () => {
         }
     }, [cityData])
 
-    useEffect(() => {
-        console.log(CityInputIndia)
-    }, [CityInputIndia])
+    // useEffect(() => {
+    //     console.log(CityInputIndia)
+    // }, [CityInputIndia])
 
 
     // ----------------------------------------------location-box----------------------------------------------------
@@ -75,39 +76,50 @@ const Header = () => {
 
     const myCity = useSelector(store => store.location.city)
     // console.log(myCity)
-    useEffect(()=>{
+    useEffect(() => {
         setIsVisible(false)
-    },[myCity])
+    }, [myCity])
 
 
-    const[userCoordinates,setUserCoordinates]=useState({
+    const [userCoordinates, setUserCoordinates] = useState({
         long: null,
         lat: null
     })
+    const [geoCity, setGeocity] = useState(null)
 
-    const currentLocationHandler=()=>{
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition)
-            }
-            else {
-                alert('Location is not Supported in your system')
-            }
+    const currentLocationHandler = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition)
         }
-
-        const showPosition = (position) => {
-            const coordinates = {
-                long: position?.coords?.longitude,
-                lat: position?.coords?.latitude
-            };
-            console.log('hello2')
-            if (userCoordinates !== coordinates) setUserCoordinates(coordinates)
-    
-            localStorage.setItem('user-coordinates', JSON.stringify(coordinates))
+        else {
+            alert('Location is not Supported in your system')
         }
+    }
 
-        // `http://api.openweathermap.org/geo/1.0/reverse?lat=${userCoordinates.lat}&lon=${userCoordinates.long}&limit=1&appid=${key}`
-    
-    
+    const showPosition = (position) => {
+        const coordinates = {
+            long: position?.coords?.longitude,
+            lat: position?.coords?.latitude
+        };
+        // console.log('hello2')
+        if (userCoordinates !== coordinates) setUserCoordinates(coordinates)
+    }
+
+    useEffect(() => {
+        if (userCoordinates.lat && userCoordinates.long) {
+
+            fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${userCoordinates.lat}&lon=${userCoordinates.long}&limit=1&appid=${process.env.REACT_APP_CITYAPI_KEY}`).then((res) => res.json()).then((res) => setGeocity(res)).catch((err) => console.log('err in city geolocation'))
+        }
+    }, [userCoordinates])
+
+    useEffect(() => {
+        if (geoCity) {
+
+            const city = geoCity[0]?.name+','+geoCity[0]?.state
+            dispatch(addLocation({city,long:userCoordinates.long,lat:userCoordinates.lat}))
+            // console.log(city)
+        }
+    }, [geoCity])
     return (
         <header className='max-w-[1200px] mx-auto p-4  sm:bg-white flex justify-between items-center'>
 

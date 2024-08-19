@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const locationSlice=createSlice({
-    name:'loaction',
+    name:'location',
     initialState:{
         city:'Bengaluru',
         long:'77.594566',
