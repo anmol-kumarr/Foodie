@@ -6,6 +6,8 @@ import { FaRegUser } from "react-icons/fa6";
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addLocation } from '../utils/locationSlice';
+import { IoReorderThreeOutline } from "react-icons/io5";
+
 const Header = () => {
     const locationKey = process.env.REACT_APP_LOCATION_KEY
     const [cityInput, setCityInput] = useState('')
@@ -120,21 +122,21 @@ const Header = () => {
         }
     }, [geoCity])
     return (
-        <header className='shadow-md shadow-slate-200'>
+        <header className='shadow-md md:shadow-slate-200'>
 
-            <div className=" max-w-[1200px] mx-auto p-4  sm:bg-white flex justify-between items-center">
+            <div className=" max-w-[1200px] mx-auto sm:p-4 p-3 bg-pink-600  md:bg-white flex justify-between items-center">
 
                 <div className='flex gap-4 items-center'>
 
-                    <h1 className='text-3xl font-extrabold text-pink-500  font-logo'>Foodie</h1>
+                    <h1 className='text-3xl font-extrabold text-white md:text-pink-500  font-logo'>Foodie</h1>
 
                     {/* <div className=' relative '> */}
 
-                    <div onClick={handleDivClick} className=' relative cursor-pointer text-sm flex items-center gap-1 group'  >
-                        <div className=''>
+                    <div onClick={handleDivClick} className='relative  cursor-pointer text-sm flex items-center gap-1 group'  >
+                        <div className='md:text-text-gray text-white'>
                             <IoLocationOutline className='' />
                         </div>
-                        <div className='text-text-gray text-[13px] font-medium font-gilory'>
+                        <div className='md:text-text-gray text-white text-[13px] font-medium font-gilory'>
                             <p>Select location</p>
                             <p className='text-[12px] font-semibold'>{myCity}</p>
                         </div>
@@ -145,7 +147,7 @@ const Header = () => {
                                 Use current location
                             </div>
                             <div className={`${isVisible ? '' : 'rounded-b-md'} p-1 border-solid border-b-[1px] `}>
-                                <input onChange={(e) => setCityInput(e.target.value)} value={cityInput} className='border-none p-2  outline-none' type="text" placeholder='Enter your City' />
+                                <input onChange={(e) => setCityInput(e.target.value)} value={cityInput} className='border-none p-2 bg-transparent outline-none' type="text" placeholder='Enter your City' />
                             </div>
                             <div className=''>
                                 {
@@ -173,29 +175,33 @@ const Header = () => {
                 </div>
 
 
-                <div>
+                <div className="sm:block hidden">
                     <div className='flex gap-6 items-center text-text-gray'>
-                        <div className='font-gilory text-sm flex items-center gap-1 bg-red-400 text-white px-4 py-2 rounded-md'>
+                        <div className='hidden font-gilory text-sm md:flex items-center gap-1 bg-red-400 text-white px-4 py-2 rounded-md'>
                             <BiSolidOffer />
                             Offers
                         </div>
 
-                        <div className='text-sm p-2 rounded-md w-[270px] flex items-center gap-2 border-solid border-[1px] border-gray-300'>
-                            <input className='border-none outline-none w-[90%] ' type="text" placeholder='Search for Resturants & foods' />
+                        <div className='bg-white text-sm p-2 rounded-md w-[270px] flex items-center gap-2 border-solid border-[1px] border-gray-300'>
+                            <input className=' border-none outline-none w-[90%] bg-transparent ' type="text" placeholder='Search for Resturants & foods' />
                             <span className='text-lg'>
                                 <IoSearch></IoSearch>
                             </span>
                         </div>
 
-                        <div className='text-xl'>
+                        <div className='text-xl md:text-text-gray text-white'>
                             <FiShoppingCart></FiShoppingCart>
                         </div>
-                        <div className='text-xl'>
+                        <div className='text-xl md:text-text-gray text-white'>
                             <FaRegUser></FaRegUser>
                         </div>
                     </div>
                 </div>
+                <div className="sm:hidden block text-[35px] text-white">
+                    <IoReorderThreeOutline />
+                </div>
             </div>
+
         </header >
 
     )

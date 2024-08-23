@@ -6,7 +6,7 @@ import Card from "../components/card"
 
 const Collection = () => {
     const [collectionData, setCollectionData] = useState([])
-    const { city, id, collection } = useParams()
+    const { id, collection } = useParams()
     // console.log(collection, id)
     const { long, lat } = useSelector(store => store.location)
     // console.log(long, lat)

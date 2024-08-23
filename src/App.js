@@ -13,7 +13,7 @@ function App() {
     const city = localStorage.getItem('user-city')
     const data = JSON.parse(city)
     if (city) dispatch(addLocation(data))
-  }, [])
+  },[])
 
   useEffect(() => {
     localStorage.setItem('user-city', JSON.stringify(city))

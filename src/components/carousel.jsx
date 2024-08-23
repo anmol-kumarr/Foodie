@@ -2,7 +2,7 @@ import { MdArrowBackIosNew, MdOutlineArrowForwardIos } from "react-icons/md";
 import {ImageCard} from "./home/imgCard"
 import ReactSimplyCarousel from 'react-simply-carousel';
 import { useState } from "react";
-import { ShimmerSimpleGallery, ShimmerThumbnail } from "react-shimmer-effects";
+import { ShimmerThumbnail } from "react-shimmer-effects";
 const CarouselDiv = ({ data }) => {
     // console.log(data)
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
