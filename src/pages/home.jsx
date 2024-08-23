@@ -1,8 +1,8 @@
 import Card from "../components/card"
 import CarouselDiv from "../components/carousel"
 import Header from "../components/header"
+import MobileNav from "../components/mobileNav"
 import useFetchHomeData from "../hooks/useFetchHomeData"
-
 const Home = () => {
     const data = useFetchHomeData()
     // console.log(data)
@@ -10,7 +10,7 @@ const Home = () => {
     const trending=data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     console.log(trending)
     return (
-        <div className="overflow-hidden">
+        <div className="overflow-hidden relative">
 
             <Header></Header>
             <div>
@@ -28,8 +28,9 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-
+            <MobileNav></MobileNav>
         </div>
+    
     )
 }
 export default Home
