@@ -1,10 +1,10 @@
 const Card = ({ item }) => {
     const url = 'https://media-assets.swiggy.com/'
     return (
-        <div className="w-56 bg-slate-50 rounded-md overflow-hidden">
-            <div className="w-56">
-                <img className="w-56 h-40" src={url + item.info.cloudinaryImageId} alt="" />
-            </div>
+        <div className=" bg-slate-50 rounded-md overflow-hidden">
+        
+                <img className="w-72 h-52" src={url + item.info.cloudinaryImageId} alt="" />
+        
             <div className="p-2">
                 <p className="font-gilory font-semibold text-text-gray">
                     {
