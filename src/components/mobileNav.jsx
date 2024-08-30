@@ -22,7 +22,7 @@ const MobileNav = () => {
 
                     <div className="bg-white flex flex-col items-center justify-center">
                         <FiTrendingUp className="text-[23px]"></FiTrendingUp>
-                        <p>Tv Shows</p>
+                        <p>Trending</p>
                     </div>
                 </NavLink>
 
@@ -30,7 +30,7 @@ const MobileNav = () => {
                 <NavLink to='/deded' className={({ isActive }) => `font-Gilroy text-center ${isActive ? 'font-bold  text-[15px] text-pink-500' : 'font-medium  text-[13px]'}`}>
 
                     <div className="bg-white relative flex flex-col items-center justify-center">
-                        <div className="p-4 rounded-full top-[-20px] border-8 border-solid  border-white absolute bg-pink-500 text-white">
+                        <div className="p-4 shadow-sm  rounded-full top-[-20px] border-8 border-solid  border-white absolute bg-pink-500 text-white">
                             <LuShoppingCart className="text-[25px] "></LuShoppingCart>
                         </div>
                     </div>

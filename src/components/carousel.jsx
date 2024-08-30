@@ -14,7 +14,7 @@ const CarouselDiv = ({ data }) => {
                 activeSlideIndex={activeSlideIndex}
                 onRequestChange={setActiveSlideIndex}
                 itemsToShow={8}
-                itemsToScroll={1}
+                itemsToScroll={3}
                 infinite={true}
 
                 containerProps={
