@@ -14,9 +14,9 @@ const Collection = () => {
     //     method: 'get',
     // }
 
-    // useEffect(() => {
-    //     fetch(`https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${long}&collection=${id}&tags=layout_CCS_${collection}&sortBy=&filters=&type=rcv2&offset=0&page_type=null`).then((res) => res.json()).then((res) => setCollectionData(res)).catch((err) => console.log(err))
-    // }, [long])
+    useEffect(() => {
+        fetch(`https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${long}&collection=${id}&tags=layout_CCS_${collection}&sortBy=&filters=&type=rcv2&offset=0&page_type=null`).then((res) => res.json()).then((res) => setCollectionData(res)).catch((err) => console.log(err))
+    }, [long])
     console.log(collectionData)
     // https://crossorigin.me
     // https://proxy.cors.sh/

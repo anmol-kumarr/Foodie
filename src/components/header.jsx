@@ -177,7 +177,7 @@ const Header = () => {
 
                 <div className="sm:block hidden">
                     <div className='flex gap-6 items-center text-text-gray'>
-                        <div className='hidden font-gilory text-sm md:flex items-center gap-1 bg-red-400 text-white px-4 py-2 rounded-md'>
+                        <div className='hidden font-gilory text-sm md:flex items-center gap-1 bg-theme-pink text-white px-4 py-2 rounded-md'>
                             <BiSolidOffer />
                             Offers
                         </div>

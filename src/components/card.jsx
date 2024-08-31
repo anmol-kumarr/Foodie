@@ -1,7 +1,7 @@
 const Card = ({ item }) => {
     const url = 'https://media-assets.swiggy.com/'
     return (
-        <div className=" bg-slate-50 rounded-md overflow-hidden">
+        <div className=" bg-white w-72 m-2  rounded-md overflow-hidden">
         
                 <img className="w-72 h-52" src={url + item.info.cloudinaryImageId} alt="" />
         
