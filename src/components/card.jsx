@@ -1,33 +1,40 @@
+import { MdOutlineAccessTime } from "react-icons/md";
 const Card = ({ item }) => {
     const url = 'https://media-assets.swiggy.com/'
     return (
-        <div className=" bg-white w-72 m-2  rounded-md overflow-hidden">
-        
-                <img className="w-72 h-52" src={url + item.info.cloudinaryImageId} alt="" />
-        
-            <div className="p-2">
-                <p className="font-gilory font-semibold text-text-gray">
+        <div className=" bg-white w-72 m-2 shadow-md shadow-gray-300 rounded-md overflow-hidden">
+            <div className="relative">
+
+
+                <img className="w-72 h-52 shadow-inner-bottom" src={url + item.info.cloudinaryImageId} alt="" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            </div>
+            <div className="p-4">
+                <p className="text-base mb-[-3px] font-gilory font-semibold text-text-gray">
                     {
                         item.info.name.length > 25 ?
                             <>
                                 {
-                                    item.info.name.slice(0,25)
+                                    item.info.name.slice(0, 25)
                                 }
                                 ...
                             </>
                             : item.info.name
                     }
                 </p>
-                <p className="font-gilory text-[13px] font-normal">{item.info.areaName}</p>
-                <p>
+                <p className="mb-1 font-gilory text-[0.8rem] font-medium text-text-gray">{item.info.areaName}</p>
+                <p className="font-gilory text-text-gray font-medium text-sm">
                     {item.info.cuisines[0]}
+                    ,
                     {item.info.cuisines[1]}
                 </p>
-                <p>
-                    <span>
+                <p className="font-gilory flex justify-between">
+                    <span className="text-sm flex bg-gray-200 rounded-lg px-1 items-center font-medium gap-1 text-text-gray">
+                        <MdOutlineAccessTime />
                         {item.info.sla.slaString}
+
                     </span>
-                    <p>
+                    <p className="text-sm font-medium text-text-gray">
                         {item.info.costForTwo}
                     </p>
 

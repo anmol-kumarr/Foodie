@@ -16,6 +16,9 @@ module.exports = {
       'logo':['Dancing Script','roboto'],
       'gilory':['Gilroy','roboto']
     },
+    boxShadow: {
+      'inner-bottom': 'inset 0 -40px 40px -10px rgba(0, 0, 0, 0.5)' // Custom blackish shadow
+    },
   
   },
   plugins: [],
