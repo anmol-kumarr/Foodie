@@ -1,6 +1,7 @@
 import Card from "../components/card"
 import CarouselDiv from "../components/carousel"
 import Header from "../components/header"
+import Offer from "../components/home/offer"
 import TrendingCarouselDiv from "../components/home/trendingCarousel"
 import MobileNav from "../components/mobileNav"
 import useFetchHomeData from "../hooks/useFetchHomeData"
@@ -22,13 +23,16 @@ const Home = () => {
                     <div className="bg-theme-green p-5">
                         <CarouselDiv data={carouselData}></CarouselDiv>
                     </div>
-                    <div className="bg-theme-gray">
 
-                        <div className="max-w-[1200px] mx-auto flex   flex-wrap justify-center gap-6 ">
+                    <div className="bg-theme-gray">
+                    <Offer></Offer>
+
+
+
+                        <div className="max-w-[1250px] mx-auto  gap-6 ">
+                            <h1 className="ml-4 mt-4 text-left text-text-gray text-2xl font-semibold font-gilory">Trending Now</h1>
                             {
                                 <TrendingCarouselDiv data={trending}></TrendingCarouselDiv>
-                            
-
                             }
                         </div>
                     </div>

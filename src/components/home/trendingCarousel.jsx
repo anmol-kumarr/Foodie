@@ -1,115 +1,59 @@
 import { MdArrowBackIosNew, MdOutlineArrowForwardIos } from "react-icons/md";
-// import { ImageCard } from "./home/imgCard"
-import ReactSimplyCarousel from 'react-simply-carousel';
-import { useState } from "react";
-import { ShimmerThumbnail } from "react-shimmer-effects";
+import { useRef} from "react";
+import { ShimmerSimpleGallery} from "react-shimmer-effects";
 import Card from "../card";
 const TrendingCarouselDiv = ({ data }) => {
 
-    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+    const carouselRef = useRef(null);
 
+    const scrollLeft = () => {
+        if (carouselRef.current) {
+            carouselRef.current.scrollBy({ left: -250, behavior: 'smooth' });
+        }
+    };
+
+    const scrollRight = () => {
+        if (carouselRef.current) {
+            carouselRef.current.scrollBy({ left: 250, behavior: 'smooth' });
+        }
+    };
     return (
-        <div className="max-w-[1300px] mx-auto relative">
-
-            <ReactSimplyCarousel
-                activeSlideIndex={activeSlideIndex}
-                onRequestChange={setActiveSlideIndex}
-                itemsToShow={4}
-                itemsToScroll={1}
-                infinite={true}
-
-                containerProps={
-                    {
-                        style: {
-                            gap: '20px'
-                        }
-                    }
-                }
-                forwardBtnProps={{
-
-                    style: {
-                        position: "absolute",
-                        right: '-1%',
-                        bottom: '50%',
-                        top: '50%',
-                        alignSelf: 'center',
-                        zIndex: '10',
-                        // alignSelf: 'center',
-                        boxShadow: '0px 0px 30px black',
-                        background: 'white',
-                        border: 'none',
-                        color: 'rgba(2, 6, 12, 0.75)',
-                        cursor: 'pointer',
-                        fontSize: '1.03rem',
-                        borderRadius: '50%',
-                        // height:20,
-                        lineHeight: 1,
-                        textAlign: 'center',
-
-                        padding: '5px',
-
-                    },
-                    children: <span><MdOutlineArrowForwardIos></MdOutlineArrowForwardIos></span>,
-                }}
-                backwardBtnProps={{
-
-                    style: {
-                        position: "absolute",
-                        left: '-4px',
-                        bottom: '50%',
-                        top: '50%',
-                        zIndex: '10',
-                        alignSelf: 'center',
-                        boxShadow: '0px 0px 30px black',
-                        background: 'white',
-                        border: 'none',
-                        color: 'rgba(2, 6, 12, 0.75)',
-                        cursor: 'pointer',
-                        fontSize: '1.03rem',
-                        borderRadius: '50%',
-                        // height:20,
-                        lineHeight: 1,
-                        textAlign: 'center',
-
-                        padding: '5px',
-
-                    },
-                    children: <span><MdArrowBackIosNew></MdArrowBackIosNew></span>,
-                }}
-                responsiveProps={[
-                    {
-
-                        itemsToShow:4,
-                        itemsToScroll: 1,
-                        minWidth: 900,
-
-                    },
-                ]}
-                speed={400}
-                easing="linear"
-
-            >
-
-                {data ? data && data.map((item) => (
-                    <Card key={item.info.id} item={item}></Card>
-                )) :
-                    <div className="flex gap-4 p-2 ">
-                        <div className="h-[148px] w-[158px] rounded-md">
-                            <ShimmerThumbnail height={305} width={288} />
-                        </div>
-                    
-                    
-
-
+        <div className="p-4 lg:max-w-[900px] sm:max-w-[600px] min-[350px]:max-w-[300px] xl:max-w-[1250px] mx-auto relative">
+            <div className="overflow-hidden">
+                <button
+                    onClick={scrollLeft}
+                    className="shadow-md z-30 absolute left-[10px] top-[50%] text-sm  p-2  transform  bg-white text-text-gray  rounded-[200%]"
+                >
+                    <div>
+                        <MdArrowBackIosNew ></MdArrowBackIosNew>
                     </div>
+                </button>
+                <div
+                    ref={carouselRef}
+                    className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide"
+                >
+                    {data ? data && data.map((item) => (
+                        <div className="">
 
-                }
+                            <Card key={item.info.id} item={item}></Card>
+                        </div>
+                    )) :
+                        <>
 
+                            <ShimmerSimpleGallery card imageHeight={300} caption />
+                        </>
+                    }
 
-
-
-
-            </ReactSimplyCarousel>
+                </div>
+                <button
+                    onClick={scrollRight}
+                    className="shadow-md absolute right-[10px] z-30 top-1/2 text-sm bg-white text-text-gray p-2 rounded-full"
+                >
+                    <div>
+                        <MdOutlineArrowForwardIos></MdOutlineArrowForwardIos>
+                    </div>
+                </button>
+            </div>
 
 
         </div>
