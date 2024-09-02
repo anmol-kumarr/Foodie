@@ -21,6 +21,7 @@ Foodie is developed by using  React library, Tailwind (for styling), Redux(for s
 - Mobile Nav added.
 - Header become responsive.
 - Offer carousel added.
+- Login added
   
    
 
