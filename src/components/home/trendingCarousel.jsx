@@ -1,6 +1,6 @@
 import { MdArrowBackIosNew, MdOutlineArrowForwardIos } from "react-icons/md";
 import { useRef} from "react";
-import { ShimmerSimpleGallery} from "react-shimmer-effects";
+import { ShimmerThumbnail} from "react-shimmer-effects";
 import Card from "../card";
 const TrendingCarouselDiv = ({ data }) => {
 
@@ -18,7 +18,7 @@ const TrendingCarouselDiv = ({ data }) => {
         }
     };
     return (
-        <div className="p-4 lg:max-w-[900px] sm:max-w-[600px] min-[350px]:max-w-[300px] xl:max-w-[1250px] mx-auto relative">
+        <div className="p-4 lg:max-w-[900px] sm:max-w-[600px] min-[350px]:max-w-[300px] xl:max-w-[1200px] mx-auto relative">
             <div className="overflow-hidden">
                 <button
                     onClick={scrollLeft}
@@ -33,14 +33,20 @@ const TrendingCarouselDiv = ({ data }) => {
                     className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide"
                 >
                     {data ? data && data.map((item) => (
-                        <div className="">
+                        <div className="" key={item.info.id}>
 
                             <Card key={item.info.id} item={item}></Card>
                         </div>
                     )) :
                         <>
 
-                            <ShimmerSimpleGallery card imageHeight={300} caption />
+                            <ShimmerThumbnail width={277} height={193}></ShimmerThumbnail>
+                            <ShimmerThumbnail width={277} height={193}></ShimmerThumbnail>
+                            <ShimmerThumbnail width={277} height={193}></ShimmerThumbnail>
+                            <ShimmerThumbnail width={277} height={193}></ShimmerThumbnail>
+                            <ShimmerThumbnail width={277} height={193}></ShimmerThumbnail>
+                            <ShimmerThumbnail width={277} height={193}></ShimmerThumbnail>
+                        
                         </>
                     }
 

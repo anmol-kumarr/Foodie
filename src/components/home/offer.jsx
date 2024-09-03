@@ -30,11 +30,11 @@ const Offer = () => {
     };
 
     return (
-        <div className="p-4 lg:max-w-[900px] sm:max-w-[600px] min-[350px]:max-w-[300px] xl:max-w-[1250px] mx-auto relative">
+        <div className="p-4 lg:max-w-[900px] sm:max-w-[600px] min-[350px]:max-w-[300px] xl:max-w-[1200px] mx-auto relative">
             <div className="overflow-hidden">
                 <button
                     onClick={scrollLeft}
-                    className="shadow-md shadow-slate-700 absolute left-[10px] top-[50%] transform -translate-y-1/2 text-sm p-2 bg-white text-gray-500 rounded-full"
+                    className="shadow-md shadow-slate-950 absolute left-[10px] top-[50%] transform -translate-y-1/2 text-sm p-2 bg-white text-gray-500 rounded-full"
                 >
                     <MdArrowBackIosNew />
                 </button>
@@ -43,7 +43,7 @@ const Offer = () => {
                     className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide"
                 >
                     {OfferData.map((item, index) => (
-                        <div key={index} className="overflow-hidden flex-shrink-0 h-[165px] w-[290px] mx-2 rounded-lg snap-center">
+                        <div key={index} className="overflow-hidden flex-shrink-0 h-[150px] w-[275px] mx-2 rounded-lg snap-center">
                             <img className="w-full h-full" src={item.img} alt={`Offer ${index + 1}`} />
                         </div>
                     ))}

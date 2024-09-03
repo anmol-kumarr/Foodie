@@ -11,6 +11,9 @@ const routes=createBrowserRouter([
         element:<Home></Home>
     },
     {
+        path:'/trending now'
+    },
+    {
         path:'/:city/:collection/:id',
         element:<Collection></Collection>
     },
