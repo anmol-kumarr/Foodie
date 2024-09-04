@@ -3,8 +3,8 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa6"
 function Footer() {
     return (
         <div className="bg-black text-gray-100 list-none font-gilory">
-            <div className="max-w-[1100px] p-5 mx-auto flex flex-wrap gap-2 justify-between">
-                <div className="footer-heading">
+            <div className="max-w-[1100px] p-5 py-10 mx-auto flex flex-wrap gap-2 justify-between">
+                <div className="flex flex-col">
                     <div className="footer-logo-cont">
 
 
@@ -26,7 +26,7 @@ function Footer() {
                 </div>
 
 
-                <div className="">
+                <div className="min-w-[130px]">
                     <p className="font-semibold mb-1">
                         Company
                     </p>
@@ -58,7 +58,7 @@ function Footer() {
                         </li>
                     </div>
                 </div>
-                <div className="">
+                <div className="min-w-[130px]">
                     <div>
 
                         <p className="font-semibold mb-1 ">
@@ -83,7 +83,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="">
+                <div className="min-w-[130px]">
                     <p className="font-semibold mb-1">We deliver to:</p>
                     <div className="text-sm font-light flex flex-col gap-1 p-2 cursor-pointer">
 

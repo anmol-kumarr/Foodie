@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const MobileNav = () => {
     return (
         <div className="fixed left-0 bottom-0 z-50 w-full  md:hidden block shadow-[0_-4px_10px_rgba(0,0,0,0.2)] ">
-            <div className="flex  bg-white justify-between mx-6 p-1">
+            <div className="flex  bg-white justify-between  px-4 py-2">
 
                 <NavLink to='/' className={({ isActive }) => `font-Gilroy text-center  ${isActive ? 'text-pink-500 font-bold text-[14px] ' : 'font-medium text-[13px] text-black'}`}>
 

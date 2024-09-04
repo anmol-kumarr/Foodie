@@ -2,11 +2,11 @@ import { MdOutlineAccessTime } from "react-icons/md";
 const Card = ({ item }) => {
     const url = 'https://media-assets.swiggy.com/'
     return (
-        <div className=" bg-white w-72 m-2 shadow-md shadow-gray-300 rounded-md overflow-hidden">
+        <div className=" bg-white w-[277px] m-2 overflow-hidden shadow-md shadow-black rounded-md">
             <div className="relative">
 
 
-                <img className="w-72 h-52 shadow-inner-bottom" src={url + item.info.cloudinaryImageId} alt="" />
+                <img className="w-full h-52 shadow-inner-bottom" src={url + item.info.cloudinaryImageId} alt="" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             </div>
             <div className="p-4">
@@ -29,7 +29,7 @@ const Card = ({ item }) => {
                     {item.info.cuisines[1]}
                 </p>
                 <p className="font-gilory flex justify-between">
-                    <span className="text-sm flex bg-gray-200 rounded-lg px-1 items-center font-medium gap-1 text-text-gray">
+                    <span className="text-sm flex bg-gray-100 rounded-lg px-1 items-center font-medium gap-1 text-text-gray">
                         <MdOutlineAccessTime />
                         {item.info.sla.slaString}
 
