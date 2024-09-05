@@ -18,16 +18,16 @@ const TrendingCarouselDiv = ({ data }) => {
         }
     };
     return (
-        <div className="p-4 lg:max-w-[900px] sm:max-w-[600px] min-[350px]:max-w-[300px] xl:max-w-[1200px] mx-auto relative">
+        <div className="lg:max-w-[900px]  xl:max-w-[1200px] mx-auto relative">
             <div className="overflow-hidden">
-                <button
+                {/* <button
                     onClick={scrollLeft}
-                    className="shadow-md z-30 absolute left-[10px] top-[50%] text-sm  p-2  transform  bg-white text-text-gray  rounded-[200%]"
+                    className="shadow-custom-black z-30 absolute left-[15px] top-[50%] text-sm  p-2  transform  bg-white text-text-gray  rounded-[200%]"
                 >
                     <div>
                         <MdArrowBackIosNew ></MdArrowBackIosNew>
                     </div>
-                </button>
+                </button> */}
                 <div
                     ref={carouselRef}
                     className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide"
@@ -51,14 +51,14 @@ const TrendingCarouselDiv = ({ data }) => {
                     }
 
                 </div>
-                <button
+                {/* <button
                     onClick={scrollRight}
                     className="shadow-md absolute right-[10px] z-30 top-1/2 text-sm bg-white text-text-gray p-2 rounded-full"
                 >
                     <div>
                         <MdOutlineArrowForwardIos></MdOutlineArrowForwardIos>
                     </div>
-                </button>
+                </button> */}
             </div>
 
 

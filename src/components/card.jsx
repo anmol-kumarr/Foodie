@@ -2,7 +2,7 @@ import { MdOutlineAccessTime } from "react-icons/md";
 const Card = ({ item }) => {
     const url = 'https://media-assets.swiggy.com/'
     return (
-        <div className=" bg-white w-[277px] m-2 overflow-hidden shadow-md shadow-black rounded-md">
+        <div className=" bg-white max-[640px]:w-[350px] sm:w-[277px] m-2 overflow-hidden shadow-md shadow-black rounded-md">
             <div className="relative">
 
 

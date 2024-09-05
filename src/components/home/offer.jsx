@@ -30,27 +30,27 @@ const Offer = () => {
     };
 
     return (
-        <div className="p-4 lg:max-w-[900px] sm:max-w-[600px] min-[350px]:max-w-[300px] xl:max-w-[1200px] mx-auto relative">
+        <div className="my-7 px-5 lg:max-w-[1200px] mx-auto relative">
             <div className="overflow-hidden">
                 <button
                     onClick={scrollLeft}
-                    className="shadow-md shadow-slate-950 absolute left-[10px] top-[50%] transform -translate-y-1/2 text-sm p-2 bg-white text-gray-500 rounded-full"
+                    className=" shadow-custom-black absolute left-[5px] top-[50%] transform -translate-y-1/2 text-sm p-2 bg-white text-gray-500 rounded-full"
                 >
                     <MdArrowBackIosNew />
                 </button>
                 <div
                     ref={carouselRef}
-                    className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide"
+                    className="flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide"
                 >
                     {OfferData.map((item, index) => (
-                        <div key={index} className="overflow-hidden flex-shrink-0 h-[150px] w-[275px] mx-2 rounded-lg snap-center">
+                        <div key={index} className="overflow-hidden flex-shrink-0 sm:h-[150px] sm:w-[281px]  rounded-lg snap-center w-96 h-52 ">
                             <img className="w-full h-full" src={item.img} alt={`Offer ${index + 1}`} />
                         </div>
                     ))}
                 </div>
                 <button
                     onClick={scrollRight}
-                    className="shadow-md shadow-slate-700 absolute right-[10px] top-1/2 transform -translate-y-1/2 text-sm bg-white text-gray-500 p-2 rounded-full"
+                    className=" shadow-custom-black absolute right-[5px] top-1/2 transform -translate-y-1/2 text-sm bg-white text-gray-500 p-2 rounded-full"
                 >
                     <MdOutlineArrowForwardIos />
                 </button>
