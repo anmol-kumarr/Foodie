@@ -1,14 +1,11 @@
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import CarouselDiv from "../components/carousel"
-import Header from "../components/header"
 import Offer from "../components/home/offer"
 import TrendingCarouselDiv from "../components/home/trendingCarousel"
-import MobileNav from "../components/mobileNav"
 import useFetchHomeData from "../hooks/useFetchHomeData"
 import "react-multi-carousel/lib/styles.css";
 import { useNavigate } from "react-router-dom";
 import SmallCard from "../components/smallCard";
-import Footer from "../components/footer";
 const Home = () => {
 
     const data = useFetchHomeData()
@@ -17,11 +14,10 @@ const Home = () => {
     const carouselData = data?.data?.cards[0]?.card?.card?.imageGridCards?.info
     const trending = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     const  resutrantsList=data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    console.log(resutrantsList)
+    // console.log(resutrantsList)
     return (
         <div className="overflow-hidden relative">
 
-            <Header></Header>
             <div>
                 <div className="">
                     <div className="bg-theme-green p-5">
@@ -75,8 +71,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <MobileNav></MobileNav>
-            <Footer></Footer>
+        
         </div >
 
     )
