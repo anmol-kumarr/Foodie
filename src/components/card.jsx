@@ -7,7 +7,7 @@ const Card = ({ item }) => {
 
 
                 <img className="w-full h-52 shadow-inner-bottom" src={url + item.info.cloudinaryImageId} alt="" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             </div>
             <div className="p-4">
                 <p className="text-base mb-[-3px] font-gilory font-semibold text-text-gray">
@@ -34,9 +34,9 @@ const Card = ({ item }) => {
                         {item.info.sla.slaString}
 
                     </span>
-                    <p className="text-sm font-medium text-text-gray">
+                    <span className="text-sm font-medium text-text-gray">
                         {item.info.costForTwo}
-                    </p>
+                    </span>
 
                 </p>
             </div>

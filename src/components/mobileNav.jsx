@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const MobileNav = () => {
     return (
         <div className="fixed left-0 bottom-0 z-50 w-full  md:hidden block shadow-[0_-4px_10px_rgba(0,0,0,0.2)] ">
-            <div className="flex  bg-white justify-between  px-4 py-2">
+            <div className="flex  bg-white justify-between items-center px-4 py-1">
 
                 <NavLink to='/' className={({ isActive }) => `font-Gilroy text-center  ${isActive ? 'text-pink-500 font-bold text-[14px] ' : 'font-medium text-[13px] text-black'}`}>
 
@@ -18,7 +18,7 @@ const MobileNav = () => {
                 </NavLink>
 
 
-                <NavLink to='/sdds' className={({ isActive }) => `font-Gilroy text-center  ${isActive ? 'font-bold text-[14px] text-pink-500' : 'font-medium text-[13px]'}`}>
+                <NavLink to='/trending now' className={({ isActive }) => `font-Gilroy text-center  ${isActive ? 'font-bold text-[14px] text-pink-500' : 'font-medium text-[13px]'}`}>
 
                     <div className="bg-white flex flex-col items-center justify-center">
                         <FiTrendingUp className="text-[23px]"></FiTrendingUp>
@@ -30,7 +30,7 @@ const MobileNav = () => {
                 <NavLink to='/deded' className={({ isActive }) => `font-Gilroy text-center ${isActive ? 'font-bold  text-[15px] text-pink-500' : 'font-medium  text-[13px]'}`}>
 
                     <div className="bg-white relative flex flex-col items-center justify-center">
-                        <div className="p-4 shadow-sm  rounded-full top-[-20px] border-8 border-solid  border-white absolute bg-pink-500 text-white">
+                        <div className="p-4 shadow-sm  rounded-full bottom-[-30px] border-8 border-solid  border-white absolute bg-pink-500 text-white">
                             <LuShoppingCart className="text-[25px] "></LuShoppingCart>
                         </div>
                     </div>

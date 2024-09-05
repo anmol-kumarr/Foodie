@@ -138,7 +138,9 @@ const Header = () => {
                         </div>
                         <div className='md:text-text-gray text-white text-[13px] font-medium font-gilory'>
                             <p>Select location</p>
-                            <p className='text-[12px] font-semibold'>{myCity}</p>
+                            <p className='text-[12px] font-semibold'>{
+                                myCity.length>20?<>{myCity.slice(0,20)} ...</>:myCity
+                                }</p>
                         </div>
 
                         <div ref={divRef} className={`border-solid border-[1px] overflow-hidden top-[56px] ${isVisible ? 'block' : 'hidden'} rounded-md w-[230px] z-10 bg-white absolute `}>
