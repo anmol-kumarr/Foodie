@@ -1,9 +1,10 @@
 import './App.css';
-import {RouterProvider } from 'react-router-dom';
-import routes from './routes/route';
+import { RouterProvider } from 'react-router-dom';
+import { routes, AppLayout } from './routes/route';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { addLocation } from './utils/locationSlice';
+
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     const city = localStorage.getItem('user-city')
     const data = JSON.parse(city)
     if (city) dispatch(addLocation(data))
-  },[])
+  }, [])
 
   useEffect(() => {
     localStorage.setItem('user-city', JSON.stringify(city))
@@ -21,7 +22,9 @@ function App() {
 
 
   return (
-    <RouterProvider router={routes}></RouterProvider>
+    <RouterProvider router={routes}>
+      <AppLayout></AppLayout>
+    </RouterProvider>
   );
 }
 
