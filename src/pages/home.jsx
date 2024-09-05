@@ -28,9 +28,9 @@ const Home = () => {
                     <div className="bg-theme-gray -mt-2 ">
                         <div className="max-w-[1250px] mx-auto gap-6 ">
                             <div className="max-w-[1200px] mt-4 p-2 mx-auto flex justify-between items-center">
-                                <h1 className="text-left text-text-gray text-2xl font-semibold font-gilory">Trending Now</h1>
+                                <h1 className="text-left mx-3 text-text-gray text-2xl font-semibold font-gilory">Trending Now</h1>
 
-                                <span onClick={() => navigate('/trending now')} className=" cursor-pointer text-theme-pink font-gilory font-semibold text-sm flex  justify-center items-center">
+                                <span onClick={() => navigate('/trending now')} className="mx-3 cursor-pointer text-theme-pink font-gilory font-semibold text-sm flex  justify-center items-center">
                                     View All
                                     <MdKeyboardDoubleArrowRight />
                                 </span>
@@ -43,16 +43,16 @@ const Home = () => {
 
                         <div className="max-w-[1200px] mx-auto">
 
-                            <div className="max-w-[1200px] mt-4 p-2 mx-auto flex justify-between items-center">
-                                <h1 className="text-left text-text-gray text-2xl font-semibold font-gilory">Most Popular</h1>
+                            <div className="max-w-[1200px]  mt-4 p-2 mx-auto flex justify-between items-center">
+                                <h1 className="text-left mx-2  text-text-gray text-2xl font-semibold font-gilory">Most Popular</h1>
 
-                                <span onClick={() => navigate('/trending now')} className=" cursor-pointer text-theme-pink font-gilory font-semibold text-sm flex  justify-center items-center">
+                                <span onClick={() => navigate('/trending now')} className="mx-2 cursor-pointer text-theme-pink font-gilory font-semibold text-sm flex  justify-center items-center">
                                     View All
                                     <MdKeyboardDoubleArrowRight />
                                 </span>
 
                             </div>
-                            <div className="flex flex-wrap justify-center items-center">
+                            <div className="flex flex-wrap justify-center items-center pb-10">
                                 {
                                     resutrantsList&&resutrantsList.length>0?(
                                         resutrantsList.map((item)=>(

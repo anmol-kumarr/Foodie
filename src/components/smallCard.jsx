@@ -3,14 +3,14 @@ import { MdOutlineAccessTime } from "react-icons/md"
 const SmallCard = ({ item }) => {
     const url = 'https://media-assets.swiggy.com/'
     return (
-        <div className=" bg-white w-[277px] m-2 overflow-hidden shadow-md shadow-black rounded-md">
-            <div className="relative">
+        <div className=" bg-white w-[95%]  sm:w-[277px] flex sm:flex-col m-2 overflow-hidden shadow-md shadow-black rounded-md">
+            <div className="w-[160px] relative sm:w-auto sm:h-auto h-3/4">
 
 
-                <img className="w-full h-52 shadow-inner-bottom" src={url + item.info.cloudinaryImageId} alt="" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <img className="sm:w-full sm:h-52 h-36 w-full  shadow-inner-bottom" src={url + item.info.cloudinaryImageId} alt="" />
+                <div className="absolute sm:block hidden  inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             </div>
-            <div className="p-4">
+            <div className="p-4 sm:w-auto  w-3/5">
                 <p className="text-base mb-[-3px] font-gilory font-semibold text-text-gray">
                     {
                         item.info.name.length > 25 ?
@@ -29,7 +29,7 @@ const SmallCard = ({ item }) => {
                     ,
                     {item.info.cuisines[1]}
                 </p>
-                <p className="font-gilory flex justify-between">
+                <p className="font-gilory flex flex-wrap pt-2 justify-between">
                     <span className="text-sm flex bg-gray-100 rounded-lg px-1 items-center font-medium gap-1 text-text-gray">
                         <MdOutlineAccessTime />
                         {item.info.sla.slaString}

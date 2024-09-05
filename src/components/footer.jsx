@@ -2,7 +2,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa6"
 
 function Footer() {
     return (
-        <div className="bg-black text-gray-100 list-none font-gilory">
+        <div className="bg-black text-gray-100 list-none sm:mb-0 mb-12 font-gilory">
             <div className="max-w-[1100px] p-5 py-10 mx-auto flex flex-wrap gap-2 justify-between">
                 <div className="flex flex-col">
                     <div className="footer-logo-cont">
