@@ -9,12 +9,7 @@ Foodie is developed by using  React library, Tailwind (for styling), Redux(for s
 ## Roadmap
 - Creating Foodie by Create react app.
 - Installing packages which is related for Development.
-- Header section development start.
-- Header completed (19-8-24).
-- Styling done for header.
-- Use current location of user added .
-- Search city location added.
-- City autocomplete added.
+- Header section added.
 - Carousel added in hero section.
 - collection page added.
 - cards added home page.
