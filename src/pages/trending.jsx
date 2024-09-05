@@ -7,21 +7,22 @@ import useFetchHomeData from "../hooks/useFetchHomeData"
 
 const Trending = () => {
     const data=useFetchHomeData()
+    const trending=data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     // const data = useSelector(store => store.showData.trending)
     // console.log(data)
 
-    const [trending, setTrending] = useState(null)
+    // const [trending, setTrending] = useState(null)
 
-    useEffect(() => {
-        setTrending(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    }, [data])
+    // useEffect(() => {
+        // setTrending(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    // }, [data])
 
     // console.log(trending)
     return (
         <div className="bg-theme-gray">
             <h1 className="font-gilory text-text-gray font-bold text-3xl px-5 py-3">Trending Now</h1>
             <BreedCrumber></BreedCrumber>
-            <div className="max-w-[1200px] mx-auto flex flex-wrap py-5 ">
+            <div className="max-w-[1200px] mx-auto flex justify-center flex-wrap py-5 ">
                 {
                     trending && Array.isArray(trending) ? (
                         <>

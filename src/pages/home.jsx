@@ -6,14 +6,18 @@ import useFetchHomeData from "../hooks/useFetchHomeData"
 import "react-multi-carousel/lib/styles.css";
 import { useNavigate } from "react-router-dom";
 import SmallCard from "../components/smallCard";
+import { useState } from "react";
 const Home = () => {
 
     const data = useFetchHomeData()
     const navigate = useNavigate()
     // console.log(data)
     const carouselData = data?.data?.cards[0]?.card?.card?.imageGridCards?.info
+    // const[carouselData,setCarouselData]=useState(data?.data?.cards[0]?.card?.card?.imageGridCards?.info)
+    // const[trending,setTrending]=useState(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     const trending = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     const  resutrantsList=data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // const [resutrantsList,setRestaurantsList]=useState(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     // console.log(resutrantsList)
     return (
         <div className="overflow-hidden relative">
